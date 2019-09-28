@@ -7,9 +7,11 @@ module.exports = (errors, loggers) => {
             logError: true
         }
 
-        let response = errors.filter( error => error.key === err.message ).pop()
+        let response = errors.filter( error => error.key || '' === err.message ).pop()
 
         if ( !response ) response = defaultDetails
+        
+        response = {...defaultDetails, ...response }
         
         // Get the error response details relevant to this error
         let { status, message, logError } = response;
