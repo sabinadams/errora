@@ -1,6 +1,6 @@
 {
   "name": "errora",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Error Handling Middleware for ExpressJS",
   "main": "index.js",
   "scripts": {
