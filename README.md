@@ -13,13 +13,13 @@ npm i -s errora
 
 Import the middleware
 
-```
+```JavScript
 const errora = require('errora')
 ```
 
 Register this middleware with Express AFTER every other middleware. 
 
-```
+```JavaScript
 app.use(errora(errors, loggers))
 ```
 
@@ -29,7 +29,7 @@ The **first argument** is an array of objects containing the definitions for eac
 These definitions will tell the handler what message to give, which error status code to pass and whether or 
 not to log that error with the loggers provided.
 
-```
+```JavaScript
 [
     {
         key(required): <error key>,       // The value to be passed into new Error(<here>) to trigger this error
@@ -44,7 +44,7 @@ not to log that error with the loggers provided.
 
 The **second argument** is an array of loggers. A logger is a function with a logging function inside of it. You may use whatever logger you like. The function wrapped around the logger should take 1 parameter which will have the error details, request scope, and the response details. 
 
-```
+```JavaScript
 [
     (logData) => {
         const { 
@@ -68,7 +68,7 @@ The **second argument** is an array of loggers. A logger is a function with a lo
 
 If an error is passed to the handler that isn't found in the list, it uses the default settings:
 
-```
+```JavaScript
 {
     status: 500,
     message: 'Something failed!',
