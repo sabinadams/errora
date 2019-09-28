@@ -27,7 +27,7 @@ app.use(errora(errors, loggers))
 
 The middleware takes in two parameters, errors and loggers.
 
-The first is an array of objects containing the definitions for each custom error
+The **first argument** is an array of objects containing the definitions for each custom error
 These definitions will tell the handler what message to give, which error status code to pass and whether or 
 not to log that error with the loggers provided.
 
@@ -44,7 +44,7 @@ not to log that error with the loggers provided.
 ]
 ```
 
-The second is an array of loggers. A logger is a function with a logging function inside of it. You may use whatever logger you like. The function wrapped around the logger should take 1 parameter which will have the error details, request scope, and the response details. 
+The **second argument** is an array of loggers. A logger is a function with a logging function inside of it. You may use whatever logger you like. The function wrapped around the logger should take 1 parameter which will have the error details, request scope, and the response details. 
 
 ```
 [
@@ -55,6 +55,7 @@ The second is an array of loggers. A logger is a function with a logging functio
             req       // Request object
         } = logData
 
+        // Logger of your choice
         logger.error({
             message: err.message,
             stack: err.stack,
