@@ -15,14 +15,12 @@ Import the middleware
 
 ```
 const errora = require('errora')
-
 ```
 
 Register this middleware with Express AFTER every other middleware. 
 
 ```
 app.use(errora(errors, loggers))
-
 ```
 
 The middleware takes in two parameters, errors and loggers.
